@@ -163,19 +163,36 @@ class WindowChild:
     def trigonometry_func_sin(self):
         number_side = self.inputVarName3.get()
         self.inputVarName3.delete(0, END)
-        self.inputVarName3.insert(END, f'{number_side}sin={str(math.sin(int(number_side)))}')
+        if not number_side:
+            number_side==0
+            self.inputVarName3.insert(END, 0)
+        else:
+            self.inputVarName3.insert(END, f'{number_side}sin={str(math.sin(int(number_side)))}')
+
     def trigonometry_func_cos(self):
         number_side = self.inputVarName3.get()
         self.inputVarName3.delete(0, END)
-        self.inputVarName3.insert(END, f'{number_side}cos={str(math.cos(int(number_side)))}')
+        if not number_side:
+            number_side==0
+            self.inputVarName3.insert(END, 0)
+        else:
+         self.inputVarName3.insert(END, f'{number_side}cos={str(math.cos(int(number_side)))}')
     def trigonometry_func_tang(self):
         number_side = self.inputVarName3.get()
         self.inputVarName3.delete(0, END)
-        self.inputVarName3.insert(END, f'{number_side}tang={str(math.tan(int(number_side)))}')
+        if not number_side:
+            number_side==0
+            self.inputVarName3.insert(END, 0)
+        else:
+            self.inputVarName3.insert(END, f'{number_side}tang={str(math.tan(int(number_side)))}')
     def trigonometry_func_cotang(self):
         number_side = self.inputVarName3.get()
         self.inputVarName3.delete(0, END)
-        self.inputVarName3.insert(END, f'{number_side}cotang={str(math.cos(int(number_side))/math.sin(int(number_side)))}')
+        if not number_side:
+            number_side==0
+            self.inputVarName3.insert(END, 0)
+        else:
+            self.inputVarName3.insert(END, f'{number_side}cotang={str(math.cos(int(number_side))/math.sin(int(number_side)))}')
 
     def ranning(self):
             self.drow_widjet()
@@ -183,6 +200,9 @@ class WindowChild:
     def close_window(self):
         self.writetofileend()
         return  self.root.destroy
+
+
+
 
 
 
